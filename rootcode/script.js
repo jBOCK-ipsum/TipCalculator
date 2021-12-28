@@ -75,6 +75,7 @@ function mainTipFunc() {
 function mainTotalPerPerson() {
   totalAmount = billCost / numberOfPeople + tipAmount;
   console.log("Total per person is: " + totalAmount);
+  totalAmount = Math.round((totalAmount + Number.EPSILON) * 100) / 100;
   document.getElementById("totalpp_result").innerHTML = "$" + totalAmount;
 }
 
