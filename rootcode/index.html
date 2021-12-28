@@ -22,7 +22,13 @@
         <div class="bill_div">
           <p class="bill">Bill Cost</p>
           <img class="dollar_symbol" src="icon-dollar.svg" alt="USD symbol" />
-          <input class="cost_input" type="number" placeholder="0" min="0"/>
+          <input
+            class="cost_input"
+            type="number"
+            placeholder="0"
+            min="0"
+            onblur="getCost()"
+          />
         </div>
         <div class="tip_div">
           <p class="tip_percentage">Select Tip %</p>
@@ -34,31 +40,52 @@
           <div class="grid_cont">
             <div class="tip_choice" class="choice4">15%</div>
             <div class="tip_choice" class="choice5">20%</div>
-            <div class="tip_choice" id="choice6">Custom</div>
+            <input
+              class="tip_choice"
+              type="number"
+              id="choice6"
+              placeholder=" Custom"
+              min="0"
+              max="100"
+              onblur="customTipFunc()"
+            />
           </div>
         </div>
         <div class="people_num_div">
-            <p class="bill">Number of People</p>
-            <img class="dollar_symbol" src="icon-person.svg" alt="symbol of person" />
-            <input class="cost_input" type="number" placeholder="1" min="1"/>
+          <p class="bill">Number of People</p>
+          <img
+            class="dollar_symbol"
+            src="icon-person.svg"
+            alt="symbol of person"
+          />
+          <input
+            id="people_input"
+            class="cost_input"
+            type="number"
+            placeholder="4"
+            min="1"
+            onblur="getPpl()"
+          />
         </div>
       </div>
       <div class="right_cont">
         <div class="tip_amount_pp_cont">
-            <p>Tip Amount</p>
-            <p class="person">/ person</p>
-            <div id="tippp_result">$0.00</div>
-        </div>  
+          <p>Tip Amount</p>
+          <p class="person">/ person</p>
+          <div id="tippp_result">$0.00</div>
+        </div>
         <div class="tip_amount_pp_cont">
-            <p>Total</p>
-            <p class="person">/ person</p>
-            <div id="totalpp_result">$0.00</div>
-        </div>  
+          <p>Total</p>
+          <p class="person">/ person</p>
+          <div id="totalpp_result">$0.00</div>
+        </div>
         <div class="reset_div">
-        <button class="reset" type="reset">RESET</button>
-    </div>
+          <button class="reset" type="reset" onclick="resetValues()">
+            RESET
+          </button>
+        </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
